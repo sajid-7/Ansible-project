@@ -1,5 +1,5 @@
 - name: DEPLOYMENT ON DEV & PROD SERVERS (GITHUB -- > PULL FROM PLAYBOOK) ALL GROUPS
   git:
     repo: "Git_hub_Url"
-    dest: "var/www/html/"
+    dest: "var/www/html/index.html"
 
