@@ -1,9 +1,10 @@
 ---
-- hosts: Dev
+- hosts: all
   user: ansible
   connection: ssh
   become: yes
   roles:
-    - role3
+    - role1
+    
 
 
