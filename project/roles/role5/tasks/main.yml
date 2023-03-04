@@ -1,0 +1,4 @@
+- name: INSTALL NUMPY & PANDAS ON ALL GROUPS
+  pip:
+    name: NumPy
+    name: Pandas

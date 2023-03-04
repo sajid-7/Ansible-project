@@ -1,0 +1,3 @@
+- name: INSTALL DOCKER ON REDHAT BY USING CONDITIONS DEV GROUP
+  when: ansible_os_family== "RedHat"
+  command: yum install docker -y

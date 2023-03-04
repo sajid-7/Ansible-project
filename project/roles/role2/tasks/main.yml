@@ -1,0 +1,7 @@
+---
+- name: INSTALL HTTPD & RESTART ON TEST GROUP
+  command: yum install httpd -y
+
+
+- name:  START ON TEST GROUP
+  command: systemctl restart httpd

@@ -1,0 +1,8 @@
+- name: This is role1 Now we create five users in every nodes
+  user: name='{{item}}' state=present
+  with_items:
+    - rahim
+    - nadeem
+    - ameen
+    - faheem
+

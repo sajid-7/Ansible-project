@@ -1,0 +1,28 @@
+- name: INSTALL JENKINS IN PROD SERVERS
+  get_url:
+    url: https://pkg.jenkins.io/redhat-stable/jenkins.repo
+    dest: /etc/yum.repos.d/jenkins.repo
+
+- name: Getting second key link of jenkins
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+- name: update links
+  action: yum name="*" state=latest
+
+- name: install java 
+  command: amazon-linux-extras install java-openjdk11 -y
+
+- name: install jenkins
+  command: yum install jenkins -y
+
+- name: import systemd
+  ansible.builtin.systemd:
+   daemon_reload: yes
+
+- name: restart jenkins
+  ansible.builtin.systemd:
+   name: jenkins
+   state: restarted  
+
